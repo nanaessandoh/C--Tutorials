@@ -8,7 +8,7 @@ namespace Tutorials
 {
     public class Tuples
     {
-        public static void Main12()
+        public static void Main1()
         {
             var item = (Name: "Eggplant", Price: 1.99m , perPackage: 3 );
             var date = DateTime.Now;

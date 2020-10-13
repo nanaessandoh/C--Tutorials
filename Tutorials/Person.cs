@@ -27,7 +27,7 @@ namespace Tutorials
 
     public class Program
     {
-        static void Main6(string[] args)
+        static void Main1(string[] args)
         {
             var Test = new Person("John", "", "Lampard");
             Console.WriteLine($"The name, in all caps: {Test.AllCaps()}");

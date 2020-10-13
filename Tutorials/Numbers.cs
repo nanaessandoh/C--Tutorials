@@ -6,7 +6,7 @@ namespace Tutorials
 {
     class Numbers
     {
-        static void Main2(string[] args)
+        static void Main1(string[] args)
         {
             int a = 18;
             int b = 6;

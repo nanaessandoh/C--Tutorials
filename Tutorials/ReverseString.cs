@@ -32,7 +32,7 @@ namespace Tutorials
             return new string (temp);
         }
 
-        public static void Main8(string[] args)
+        public static void Main1(string[] args)
         {
             Console.Write($"Please Enter a String: ");
             string input = Console.ReadLine();

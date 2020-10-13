@@ -17,7 +17,7 @@ namespace Tutorials
     public class Program1 
     {
         public enum Unit { item, kilogram, gram, dozen };
-        public static void Main13() 
+        public static void Main1() 
         {
             var item = new Vegetable ("Eggplant");
             var date = DateTime.Now;

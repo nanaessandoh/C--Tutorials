@@ -6,18 +6,12 @@ namespace Tutorials
 {
     class IfElse
     {
-        static void Main3(string[] args)
+        static void Main1(string[] args)
         {
             // IF
             int a = 5;
             int b = 6;
             if (a + b > 10)
-                Console.WriteLine("The answer is greater than 10.");
-
-            // IF/ELSE
-            int c = 3;
-            int d = 6;
-            if (c + d > 10)
                 Console.WriteLine("The answer is greater than 10.");
 
             // IF/ELSE with no brances

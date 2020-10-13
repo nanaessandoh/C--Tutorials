@@ -7,7 +7,7 @@ namespace Tutorials
     class NullCheck
     {
 
-        static void Main7(string[] args) 
+        static void Main1(string[] args) 
         {
             string t = null;
             Console.WriteLine(t?.Length);

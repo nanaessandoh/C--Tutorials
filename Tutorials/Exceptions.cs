@@ -14,16 +14,16 @@ namespace Tutorials
             return false;
         }
 
-        public static void Main10(string[] args)
+        public static void Main1(string[] args)
         {
             try
             {
                 string s = null;
                 Console.WriteLine(s.Length);
-
             }
-            catch (Exception e) when (LogException(e))
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
             }
             Console.WriteLine("Exception must have been handled");
         }

@@ -2,7 +2,7 @@
 
 namespace Tutorials
 {
-    class Stings
+    class Strings
     {
         static void Main1(string[] args)
         {

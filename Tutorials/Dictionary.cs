@@ -6,7 +6,7 @@ namespace Tutorials
 {
     public class Dictionary
     {
-        public static void Main11()
+        public static void Main1()
         {
             var messages = new Dictionary<int, string>
             {

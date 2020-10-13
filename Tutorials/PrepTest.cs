@@ -11,31 +11,13 @@ namespace Tutorials
         {
             var distinctArray = InputArray.Distinct();
 
-            return distinctArray.OfType<int>().ToList();
+            return distinctArray.ToList();
         }
 
         // Count distinct pairs in a List
         public static int CountUniquePairs(List<int> inputList)
         {
-            int count = 0;
-            // Sort the List
-            inputList.Sort();
-
-            //Get the length of the array
-            int listCount = inputList.Count;
-
-            if (inputList[0] != inputList[listCount - 1])
-            {
-                count++;
-            }
-
-            for (int i = 0; i < listCount - 1; i++)
-            {
-                if (inputList[i] != inputList[i + 1])
-                    count++;
-            }
-
-            return count;
+            return inputList.Distinct().Count();
         }
 
         // Reverse a string
@@ -49,30 +31,25 @@ namespace Tutorials
         // Reverse a sentence
         public static string ReverseSentence(string input)
         {
-            string sentence = string.Empty;
-            string[] reverseSentence = input.Split(' ');
+            string[] reverseSentence = input.Split(" ");
             Array.Reverse(reverseSentence);
-
-            foreach( string x in reverseSentence)
-            {
-                sentence += $"{x} ";
-            }
-
-            return sentence;
+            return string.Join(" ",reverseSentence);
         }
 
         // Maximum value of a List
         public static int MaximumValue( List<int> input)
         {
-            input.Sort();
-            return input[input.Count - 1];
+            //input.Sort();
+            //return input[input.Count - 1];
+            return input.Max();
         }
 
         // Minimum value of List
         public static int MinimumValue(List<int> input)
         {
-            input.Sort();
-            return input[0];
+            //input.Sort();
+            //return input[0];
+            return input.Min();
         }
 
         // Remainder
@@ -84,13 +61,12 @@ namespace Tutorials
         // Distinct Value and their frequency
         public static string DistinctValueAndFrequency(List<int> input)
         {
-            int count;
             string output = string.Empty;
             var distinctArray = input.Distinct();
 
             foreach ( int x in distinctArray)
             {
-                count = 0;
+                int count = 0;
                 for (int i = 0; i < input.Count; i++)
                 {
                     if(x == input[i])
@@ -99,7 +75,7 @@ namespace Tutorials
                     }
                 }
 
-                output += $"{x}({count}) ";
+                output += $"Value:{x} Freq:{count}\n";
             }
 
             return output;
@@ -117,7 +93,24 @@ namespace Tutorials
             }
             return reverse;
         }
-        public static void Main11()
+
+        // FizzBuzz
+        public static void Fizbuzz(int IterNum)
+        {
+            for (int i = 1; i <= IterNum; i++ )
+            {
+                string output = string.Empty;
+                if (i % 3 == 0)
+                    output += "Fizz";
+                if (i % 5 == 0)
+                    output += "Buzz";
+                if (String.IsNullOrEmpty(output))
+                    output += i.ToString();
+                Console.WriteLine(output);
+            }
+
+        }
+        public static void Main1()
         {
 
             List<int> myList = new List<int>() { 1, 2, 3, 4, 4, 2, 3, 5 };
@@ -155,6 +148,9 @@ namespace Tutorials
 
             // Reverse Integer
             Console.WriteLine($"The reverse integer is : {ReverseMyInt(myNumber)}");
+
+            // Test FizzBuzz
+            Fizbuzz(20);
 
             Console.Write($"\n\n\n");
         }

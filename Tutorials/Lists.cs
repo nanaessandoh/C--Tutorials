@@ -6,7 +6,7 @@ namespace Tutorials
 {
     class Lists
     {
-        static void Main5(string[] args)
+        static void Main1(string[] args)
         {
             // Creating a List
             var names = new List<string> { "John", "Adam", "Stewart" };

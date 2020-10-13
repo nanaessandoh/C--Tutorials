@@ -43,7 +43,7 @@ namespace Tutorials
             return temp;
         }
 
-        public static void Main(string[] args)
+        public static void Main11(string[] args)
         {
             var input = new List<string> { "2010 /03/30", "15/12/2016", "11-15-2012", "20130720" };
             Ramsoft.ChangeDateFormat(input).ForEach(Console.WriteLine);

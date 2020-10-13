@@ -6,7 +6,7 @@ namespace Tutorials
 {
     class Loops
     {
-        static void Main4(string[] args)
+        static void Main1(string[] args)
         {
             // While Condition
             int counter1 = 0;

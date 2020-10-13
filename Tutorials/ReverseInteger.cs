@@ -18,7 +18,7 @@ namespace Tutorials
             return reverse;
         }
 
-        public static void Main9(string[] args)
+        public static void Main1(string[] args)
         {
             Console.Write($"Please Enter an Integer: ");
             int input = int.Parse(Console.ReadLine());
