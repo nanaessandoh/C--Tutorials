@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Tutorials
 {
@@ -110,7 +111,35 @@ namespace Tutorials
             }
 
         }
-        public static void Main1()
+
+
+        static double AngleBetweenHourMinute(int hour, int min)
+        {
+            double m = (360 / 60) * min;
+            double h = ((360 / 12)* hour) + ((360 / 12) * (min / 60.0));
+            double deg = Math.Abs(m - h);
+
+            return Math.Min(deg, 360-deg);
+
+        }
+
+
+        static string FirstRecuringChar(string input)
+        {
+            var dict = new HashSet<char>();
+            foreach (char item in input)
+            {
+                if (dict.Contains(item))
+                {
+                    return item.ToString();
+                }
+                else
+                    dict.Add(item);
+            }
+
+            return "None";
+        }
+        public static void Main()
         {
 
             List<int> myList = new List<int>() { 1, 2, 3, 4, 4, 2, 3, 5 };
@@ -152,7 +181,22 @@ namespace Tutorials
             // Test FizzBuzz
             Fizbuzz(20);
 
+            // Test Angle between hour and minute
+            int hour = 2, minute = 10;
+
+            Console.WriteLine($"The angle between {hour} and {minute} is {AngleBetweenHourMinute(hour, minute)}");
+
             Console.Write($"\n\n\n");
+
+
+            char a = 'a';
+
+            int num = Convert.ToInt32(a -'a');
+            Console.WriteLine(num);
+            /* 
+             
+             
+             */
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Tutorials
     class StacksNQueues
     {
 
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             List<int> myList = new List<int>();
             Queue<int> myQueue = new Queue<int>();
