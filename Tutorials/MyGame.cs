@@ -15,10 +15,7 @@ namespace Tutorials
             {
                 displayMenu = MainMenu();
             }
-            
-
         }
-
 
         static bool MainMenu()
         {

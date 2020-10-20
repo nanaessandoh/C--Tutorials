@@ -139,64 +139,100 @@ namespace Tutorials
 
             return "None";
         }
-        public static void Main()
+
+        // Complete the circularArrayRotation function below.
+        static int[] circularArrayRotation(int[] a, int k, int[] queries)
         {
+            int aL = a.Length;
+            int qL = queries.Length;
+            //var myList = new int[aL];
+            var myList = new List<int>(new int[10]);
 
-            List<int> myList = new List<int>() { 1, 2, 3, 4, 4, 2, 3, 5 };
-            List<int> mySortList = new List<int>() { 1, 1, 3, 7, 2, 2, 4, 10, 15, 2, 4, 6, 4 };
-            string input = "Reverse";
-            string sentence = "The dog is my hero";
-            int myNumber = 12413456;
-
-            // Show the Distinct Values
-            Console.Write($"The distinct values are: ");
-            var item = ShowUniqueValues(myList);
-
-            foreach (var asset in item)
+            for (int i = 0; i < aL; i++)
             {
-                Console.Write($"{asset} ");
+                if (i + k >= aL)
+                {
+                    myList[(i + k) % aL] = a[i];
+                }
+                else
+                {
+                    myList[i + k] = a[i];
+                }
             }
 
-            // Count unique pairs in a List
-            Console.WriteLine($"\nCount unique pair: {CountUniquePairs(myList)}");
+            var output = new List<int>(qL);
+            for (int i = 0; i < qL; i++)
+            {
+                output.Add(myList[queries[i]]);
+            }
 
-            // Reverse a string
-            Console.WriteLine($"The reverse string : {ReverseMyInput(input)}");
+            return output.ToArray();
+        }
+        public static void Main1()
+        {
 
-            // Reverse a sentence
-            Console.WriteLine($"The reverse sentence : {ReverseSentence(sentence)}");
+            //List<int> myList = new List<int>() { 1, 2, 3, 4, 4, 2, 3, 5 };
+            //List<int> mySortList = new List<int>() { 1, 1, 3, 7, 2, 2, 4, 10, 15, 2, 4, 6, 4 };
+            //string input = "Reverse";
+            //string sentence = "The dog is my hero";
+            //int myNumber = 12413456;
 
-            // Maximum Value of a List
-            Console.WriteLine($"Maximum Value in a list : {MaximumValue(mySortList)}");
+            //// Show the Distinct Values
+            //Console.Write($"The distinct values are: ");
+            //var item = ShowUniqueValues(myList);
 
-            // Minimum Value of a List
-            Console.WriteLine($"Minimum value in a list : {MinimumValue(mySortList)}");
+            //foreach (var asset in item)
+            //{
+            //    Console.Write($"{asset} ");
+            //}
 
-            // Distinct values and frequncy
-            Console.WriteLine($"Distinct values and frequency : {DistinctValueAndFrequency(mySortList)}");
+            //// Count unique pairs in a List
+            //Console.WriteLine($"\nCount unique pair: {CountUniquePairs(myList)}");
 
-            // Reverse Integer
-            Console.WriteLine($"The reverse integer is : {ReverseMyInt(myNumber)}");
+            //// Reverse a string
+            //Console.WriteLine($"The reverse string : {ReverseMyInput(input)}");
 
-            // Test FizzBuzz
-            Fizbuzz(20);
+            //// Reverse a sentence
+            //Console.WriteLine($"The reverse sentence : {ReverseSentence(sentence)}");
 
-            // Test Angle between hour and minute
-            int hour = 2, minute = 10;
+            //// Maximum Value of a List
+            //Console.WriteLine($"Maximum Value in a list : {MaximumValue(mySortList)}");
 
-            Console.WriteLine($"The angle between {hour} and {minute} is {AngleBetweenHourMinute(hour, minute)}");
+            //// Minimum Value of a List
+            //Console.WriteLine($"Minimum value in a list : {MinimumValue(mySortList)}");
 
-            Console.Write($"\n\n\n");
+            //// Distinct values and frequncy
+            //Console.WriteLine($"Distinct values and frequency : {DistinctValueAndFrequency(mySortList)}");
+
+            //// Reverse Integer
+            //Console.WriteLine($"The reverse integer is : {ReverseMyInt(myNumber)}");
+
+            //// Test FizzBuzz
+            //Fizbuzz(20);
+
+            //// Test Angle between hour and minute
+            //int hour = 2, minute = 10;
+
+            //Console.WriteLine($"The angle between {hour} and {minute} is {AngleBetweenHourMinute(hour, minute)}");
+
+            //Console.Write($"\n\n\n");
 
 
-            char a = 'a';
+            //char a = 'a';
 
-            int num = Convert.ToInt32(a -'a');
-            Console.WriteLine(num);
-            /* 
-             
-             
-             */
+            //int num = Convert.ToInt32(a -'a');
+            //Console.WriteLine(num);
+
+            int[] a = new int[] {1,2,3,4};
+            int k = 2;
+            int[] b = new int[] {0,1};
+
+            int[] output = circularArrayRotation(a, k, b);
+
+            foreach (int item in output)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
